@@ -24,7 +24,7 @@ namespace WeekProject.Controllers
         [Route("")]
         public IActionResult Index()
         {
-             return RedirectToAction("Register");
+             return View();
         }
 
         [HttpPost]
@@ -51,7 +51,7 @@ namespace WeekProject.Controllers
                 _dbcontext.Users.Add(user);
                 _dbcontext.SaveChanges();
 
-                return RedirectToAction("Dashboard", "Travel");
+                return RedirectToAction("Create", "Travel");
             }
             return View(model);
         }
