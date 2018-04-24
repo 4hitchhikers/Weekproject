@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WeekProject.Models
 {
-    public class DojoActivityCreateViewModel
+    public class TravelCreateViewModel
     {
         [Required]
         [Display(Name = "Title")]

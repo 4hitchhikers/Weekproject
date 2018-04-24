@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WeekProject.Migrations
 {
@@ -14,14 +13,14 @@ namespace WeekProject.Migrations
                 columns: table => new
                 {
                     userid = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    created_at = table.Column<DateTime>(nullable: false),
-                    email = table.Column<string>(nullable: true),
+                        .Annotation("Sqlite:Autoincrement", true),
                     first_name = table.Column<string>(nullable: true),
                     last_name = table.Column<string>(nullable: true),
                     nickname = table.Column<string>(nullable: true),
+                    email = table.Column<string>(nullable: true),
                     password = table.Column<string>(nullable: true),
                     profile_pict = table.Column<string>(nullable: true),
+                    created_at = table.Column<DateTime>(nullable: false),
                     updated_at = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -34,11 +33,11 @@ namespace WeekProject.Migrations
                 columns: table => new
                 {
                     pictureid = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    created_at = table.Column<DateTime>(nullable: false),
+                        .Annotation("Sqlite:Autoincrement", true),
+                    pict_name = table.Column<string>(nullable: true),
                     date_visited = table.Column<DateTime>(nullable: false),
                     description = table.Column<string>(nullable: true),
-                    pict_name = table.Column<string>(nullable: true),
+                    created_at = table.Column<DateTime>(nullable: false),
                     updated_at = table.Column<DateTime>(nullable: false),
                     userid = table.Column<int>(nullable: false)
                 },
@@ -58,11 +57,11 @@ namespace WeekProject.Migrations
                 columns: table => new
                 {
                     commentid = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     comment = table.Column<string>(nullable: true),
-                    created_at = table.Column<DateTime>(nullable: false),
-                    pictureid = table.Column<int>(nullable: false),
                     senderid = table.Column<int>(nullable: false),
+                    pictureid = table.Column<int>(nullable: false),
+                    created_at = table.Column<DateTime>(nullable: false),
                     updated_at = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -87,14 +86,14 @@ namespace WeekProject.Migrations
                 columns: table => new
                 {
                     placeid = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    address = table.Column<string>(nullable: true),
-                    city = table.Column<string>(nullable: true),
-                    created_at = table.Column<DateTime>(nullable: false),
-                    place_pictid = table.Column<int>(nullable: false),
+                        .Annotation("Sqlite:Autoincrement", true),
                     state = table.Column<string>(nullable: true),
-                    updated_at = table.Column<DateTime>(nullable: false),
-                    visitorid = table.Column<int>(nullable: false)
+                    city = table.Column<string>(nullable: true),
+                    address = table.Column<string>(nullable: true),
+                    visitorid = table.Column<int>(nullable: false),
+                    place_pictid = table.Column<int>(nullable: false),
+                    created_at = table.Column<DateTime>(nullable: false),
+                    updated_at = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
